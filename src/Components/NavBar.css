@@ -6,10 +6,9 @@
 }
 .nav-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
-
 .menu-toggle{
     display: none;
 }
@@ -37,6 +36,9 @@
         display: block;
         font-size: 1.5rem;
         cursor: pointer;
+    }
+    .nav-container{
+        justify-content: space-between;
     }
     .nav-links{
         display: none;

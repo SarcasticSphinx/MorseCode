@@ -10,9 +10,9 @@ function App() {
     <>
       <NavBar />
       <Routes>
-        <Route path="/" element={<MorseHomePage />} />
-        <Route path="/converter" element={<MorseConverter />} />
-        <Route path="/exam" element={<MorseExam />} />
+        <Route path="/MorseCode" element={<MorseHomePage />} />
+        <Route path="/MorseCode/converter" element={<MorseConverter />} />
+        <Route path="/MorseCode/exam" element={<MorseExam />} />
       </Routes>
     </>
   );

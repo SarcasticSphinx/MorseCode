@@ -13,9 +13,9 @@ const Navbar = () => {
                     ☰
                 </button>
                 <div className={`nav-links ${menuOpen ? "open" : ""}`}>
-                    <Link to="/">Home</Link>
-                    <Link to="/converter">Converter</Link>
-                    <Link to="/exam">Exam</Link>
+                    <Link to="/MorseCode">Home</Link>
+                    <Link to="/MorseCode/converter">Converter</Link>
+                    <Link to="/MorseCode/exam">Exam</Link>
                 </div>
             </div>
         </nav>
