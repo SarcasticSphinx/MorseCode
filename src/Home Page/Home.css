@@ -1,0 +1,54 @@
+/* Container styling */
+.morse-homepage {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  padding: 30px;
+  max-width: 800px;
+  margin: 30px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  }
+  
+  /* Title styling */
+  .title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  }
+  
+  /* Table styling */
+  .morse-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  text-align: left;
+  
+  }
+  .morse-table td{
+    letter-spacing: 0.1em; /* Added letter spacing */
+    
+  }
+  .morse-table th, .morse-table td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  }
+  
+  .morse-table th {
+  background-color: #4a90e2;
+  color: white;
+  }
+  
+  .morse-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+  }
+  
+  .morse-table tr:hover {
+  background-color: #f1f1f1;
+  }
+  
+  /* Additional table styling */
+  .morse-table td {
+  font-size: 1.2rem;
+  }

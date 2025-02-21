@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { textToMorse, morseToText } from "../data/morseCode";
+import { textToMorse, morseToText } from "../../data/morseCode";
 import "./MorseConverter.css";
 
 const MorseConverter = () => {
@@ -30,7 +30,9 @@ const MorseConverter = () => {
       <button className="convert-button" onClick={handleMorseToText}>
         Morse to Text
       </button>
-      <p className="output">Output: <span className="output-code">{output}</span></p>
+      <p className="output">
+        Output: <span className="output-code">{output}</span>
+      </p>
     </div>
   );
 };
