@@ -1,0 +1,92 @@
+/* Container styling */
+.morse-converter {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    max-width: 500px;
+    margin: 50px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Title styling */
+  .title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Input field styling */
+  .input-field {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .input-field:focus {
+    border-color: #4a90e2;
+  }
+  
+  /* Button styling */
+  .convert-button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .convert-button:hover {
+    background-color: #357ab7;
+  }
+  
+  /* Output text styling */
+  .output {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 20px;
+  }
+
+  .output-code{
+    font-size: 4rem;
+  }
+@media (max-width: 600px) {
+    .morse-converter {
+        padding: 15px;
+        max-width: 90%;
+        margin: 20px auto;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .input-field {
+        width: 100%;
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .convert-button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .output {
+        font-size: 1rem;
+    }
+
+    .output-code {
+        font-size: 2.5rem;
+    }
+}
