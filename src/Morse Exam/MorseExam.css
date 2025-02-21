@@ -1,63 +1,146 @@
-/* Container for the exam */
+/* General Container */
 .exam-container {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    padding: 20px;
-    max-width: 600px;
-    margin: 30px auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  h1 {
-    font-size: 2rem;
-    color: #333;
-  }
-  
-  .instruction {
-    font-size: 1.2rem;
-    margin-top: 10px;
-  }
-  
-  .morse-blink {
-    width: 100px;
-    height: 100px;
-    margin: 20px auto;
-    background-color: #ccc;
-    transition: background-color 0.2s ease;
-  }
-  
-  .morse-blink.blink {
-    background-color: #4CAF50; /* Green color when blinking */
-  }
-  
-  input {
-    padding: 10px;
-    font-size: 1.2rem;
-    width: 200px;
-    margin-right: 10px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    margin: 0 10px;
-    font-size: 1.2rem;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  .feedback {
-    margin-top: 10px;
-    font-size: 1.2rem;
-    color: #333;
-  }
-  
-  
+  text-align: center;
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.exam-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Instructions */
+.instruction {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+/* Question Count */
+.question-count {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Morse Code Blink Box */
+.morse-blink {
+  width: 50px;
+  height: 50px;
+  margin: 20px auto;
+  background-color: black;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  border-radius: 50%;
+}
+
+.blink {
+  opacity: 1;
+}
+
+/* Input Field */
+.guess-input {
+  padding: 10px;
+  font-size: 18px;
+  width: 80%;
+  max-width: 250px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Buttons */
+.submit-button,
+.again-button {
+  margin: 10px 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.submit-button {
+  background: #4CAF50;
+  color: white;
+}
+
+.submit-button:hover {
+  background: #45a049;
+}
+
+.again-button {
+  background: #008CBA;
+  color: white;
+}
+
+.again-button:hover {
+  background: #0077a8;
+}
+
+/* Feedback Text */
+.feedback {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #333;
+}
+
+/* Results Section */
+.result-container {
+  margin-top: 20px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.result-title {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+/* Results Table */
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.result-table th,
+.result-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.result-table th {
+  background: #333;
+  color: white;
+}
+
+.result-table td {
+  background: #f9f9f9;
+}
+
+.result-table td:last-child {
+  font-weight: bold;
+}
+
+.result-table td:nth-child(4) {
+  color: #4CAF50;
+}
+
+.result-table td:nth-child(4):contains("❌") {
+  color: #d9534f;
+}

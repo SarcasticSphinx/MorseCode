@@ -11,7 +11,8 @@ const MorseConverter = () => {
   };
 
   const handleMorseToText = () => {
-    setOutput(morseToText(input));
+    const formattedInput = input.replace(/\./g, "▪"); // Replace . with ▪
+    setOutput(morseToText(formattedInput));
   };
 
   return (
