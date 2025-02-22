@@ -59,7 +59,9 @@
 
 /* Buttons */
 .submit-button,
-.again-button {
+.again-button,
+.back-button,
+.start-button {
   margin: 10px 5px;
   padding: 10px 15px;
   font-size: 16px;
@@ -68,6 +70,16 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s ease-in-out;
+}
+
+.back-button {
+  background: #008CBA;
+  color: white;
+}
+
+.start-button {
+  background: #4CAF50;
+  color: white;
 }
 
 .submit-button {
@@ -144,3 +156,49 @@
 .result-table td:nth-child(4):contains("❌") {
   color: #d9534f;
 }
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .exam-container {
+    padding: 10px;
+  }
+
+  .exam-title {
+    font-size: 20px;
+  }
+
+  .instruction {
+    font-size: 14px;
+  }
+
+  .question-count {
+    font-size: 12px;
+  }
+
+  .guess-input {
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .submit-button,
+  .again-button,
+  .back-button,
+  .start-button {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .feedback {
+    font-size: 16px;
+  }
+
+  .result-title {
+    font-size: 20px;
+  }
+
+  .result-table th,
+  .result-table td {
+    padding: 8px;
+  }
+}
+

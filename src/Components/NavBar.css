@@ -9,6 +9,12 @@
     justify-content: space-around;
     align-items: center;
 }
+.logo{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    text-decoration: none;
+}
 .menu-toggle{
     display: none;
 }

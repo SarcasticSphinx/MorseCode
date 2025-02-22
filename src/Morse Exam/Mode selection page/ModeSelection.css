@@ -1,0 +1,46 @@
+.mode-selection {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.mode-selection h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.mode-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.mode-button:hover {
+    background-color: #45a049;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+    .mode-selection {
+        margin-top: 20px;
+    }
+
+    .mode-selection h1 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    .mode-button {
+        padding: 10px 20px;
+        font-size: 14px;
+        margin: 5px 10px;
+    }
+}
