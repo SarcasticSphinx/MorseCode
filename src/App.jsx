@@ -6,20 +6,19 @@ import MorseExamMedium from "./Morse Exam/medium mode/MorseExamMedium.jsx";
 import MorseExamHard from "./Morse Exam/hard mode/MorseExamHard.jsx";
 import NavBar from "./Components/NavBar.jsx";
 
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom"; // ❌ Removed Router here
 
 function App() {
   return (
     <>
       <NavBar />
       <Routes>
-        <Route path="/MorseCode" element={<MorseHomePage />} />
-        <Route path="/MorseCode/converter" element={<MorseConverter />} />
-        <Route path="/MorseCode/exam" element={<ModeSelection />} />
-        <Route path="/MorseCode/exam/easy" element={<MorseExamEasy />} />
-        <Route path="/MorseCode/exam/medium" element={<MorseExamMedium />} />
-        <Route path="/MorseCode/exam/hard" element={<MorseExamHard />} />
-
+        <Route path="/" element={<MorseHomePage />} />
+        <Route path="/converter" element={<MorseConverter />} />
+        <Route path="/exam" element={<ModeSelection />} />
+        <Route path="/exam/easy" element={<MorseExamEasy />} />
+        <Route path="/exam/medium" element={<MorseExamMedium />} />
+        <Route path="/exam/hard" element={<MorseExamHard />} />
       </Routes>
     </>
   );

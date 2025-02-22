@@ -93,7 +93,7 @@ const MorseExam = () => {
   return (
     <div className="exam-container">
       <h1 className="exam-title">Morse Code Exam [Easy Mode]</h1>
-      <a href="/MorseCode/exam"><button className="back-button">Back</button></a>
+      <a href="/MorseCode/#/exam"><button className="back-button">Back</button></a>
       {!examStarted ? (
         <button className="start-button" onClick={handleStartExam}>
           Start Exam

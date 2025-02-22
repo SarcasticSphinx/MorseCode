@@ -1,4 +1,5 @@
 @import "tailwindcss";
-html{
-    font-family: poppins;
+
+* {
+    font-family: 'poppins';
 }
