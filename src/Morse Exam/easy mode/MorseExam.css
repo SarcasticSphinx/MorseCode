@@ -254,7 +254,7 @@
 /* Responsive Design with smooth transitions */
 @media (max-width: 600px) {
   .mode-title{
-    margin-top: 50px;
+    margin-top: 90px;
   }
   .exam-container {
     margin: 90px 20px;
