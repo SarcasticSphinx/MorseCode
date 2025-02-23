@@ -1,54 +1,240 @@
-/* Container styling */
 .morse-homepage {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
-  padding: 30px;
-  max-width: 800px;
-  margin: 30px auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  padding: 2rem;
+  max-width: 900px;
+  margin: 90px auto;
+  border-radius: 20px;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.1),
+    0 1px 8px rgba(0, 0, 0, 0.07);
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
 
-  }
-  
-  /* Title styling */
-  .title {
+.header-container {
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeInDown 0.8s ease forwards;
+}
+
+.title {
   font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 20px;
-  }
-  
-  /* Table styling */
-  .morse-table {
+  background: linear-gradient(45deg, #2c3e50, #3498db);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #6c757d;
+  font-size: 1.1rem;
+}
+
+.search-container {
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.search-input {
+  width: 80%;
+  max-width: 400px;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  background: white;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.05),
+    0 0 0 3px rgba(52, 152, 219, 0.1);
+  transform: scale(1.02);
+}
+
+.table-container {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.4s;
+  overflow-x: auto;
+}
+
+.morse-table {
   width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  text-align: left;
-  
-  }
-  .morse-table td{
-    letter-spacing: 0.1em; /* Added letter spacing */
-    
-  }
-  .morse-table th, .morse-table td {
-  padding: 12px;
-  border: 1px solid #ccc;
-  }
-  
-  .morse-table th {
-  background-color: #4a90e2;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 1rem;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.morse-table th {
+  background: linear-gradient(45deg, #2c3e50, #3498db);
   color: white;
-  }
-  
-  .morse-table tr:nth-child(even) {
-  background-color: #f9f9f9;
-  }
-  
-  .morse-table tr:hover {
-  background-color: #f1f1f1;
-  }
-  
-  /* Additional table styling */
-  .morse-table td {
+  padding: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.morse-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.morse-table tr {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.morse-table tr:hover {
+  background-color: #f8f9fa;
+  transform: scale(1.01);
+}
+
+.morse-table tr.selected {
+  background-color: rgba(52, 152, 219, 0.1);
+}
+
+.character-cell {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.code-cell {
+  font-family: monospace;
+  letter-spacing: 2px;
+  color: #3498db;
+}
+
+.action-cell {
+  width: 80px;
+}
+
+.play-button {
+  background: none;
+  border: none;
   font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.play-button:hover {
+  transform: scale(1.2);
+}
+
+.play-button.playing {
+  animation: pulse 1s infinite;
+}
+
+.selected-info {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease forwards;
+  z-index: 1000;
+}
+
+.close-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #6c757d;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: #dc3545;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+  .morse-homepage {
+    padding: 1rem;
+    margin: 1rem;
+    margin-top: 6rem;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .search-input {
+    width: 90%;
+  }
+
+  .morse-table td,
+  .morse-table th {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .selected-info {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+} 

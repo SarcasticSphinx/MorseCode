@@ -1,0 +1,126 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #e9ecef; /* Light gray background */
+}
+
+/* About Container */
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  min-height: 100vh; /* Full height */
+}
+
+/* About Card */
+.about-card {
+  display: flex; /* Use flexbox for row layout */
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 800px; /* Wider for desktop */
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0; /* Start as invisible */
+  animation: appear 0.6s forwards; /* Apply appear animation */
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Author Image */
+.author-image {
+  width: 250px; /* Fixed width for the image */
+  height: auto;
+  border-right: 4px solid #007BFF; /* Blue border on the right */
+  object-fit: cover; /* Maintain aspect ratio */
+}
+
+/* About Content */
+.about-content {
+  padding: 30px;
+  text-align: left; /* Align text to the left */
+  flex: 1; /* Allow content to take remaining space */
+}
+
+.about-title {
+  font-size: 2.5rem; /* Larger title */
+  color: #007BFF; /* Blue color */
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase; /* Uppercase for emphasis */
+  letter-spacing: 1px; /* Spacing between letters */
+  position: relative;
+}
+
+.about-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #FF5733; /* Orange color */
+  margin: 10px auto; /* Center the underline */
+  border-radius: 2px;
+}
+
+/* About Text */
+.about-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #555; /* Darker gray for better readability */
+  margin-top: 15px;
+}
+
+/* Highlighted Text */
+.highlight {
+  font-weight: bold;
+  color: #007BFF; /* Orange color */
+}
+
+/* Animation for appear effect */
+@keyframes appear {
+  0% {
+      opacity: 0; /* Start invisible */
+      transform: translateY(20px); /* Start slightly below */
+  }
+  100% {
+      opacity: 1; /* Fully visible */
+      transform: translateY(0); /* End at original position */
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .about-card {
+      flex-direction: column; /* Stack vertically on smaller screens */
+  }
+
+  .author-image {
+      width: 100%; /* Full width for the image */
+      border-right: none; /* Remove border */
+      border-bottom: 4px solid #007BFF; /* Add bottom border */
+  }
+
+  .about-title {
+      font-size: 2rem; /* Slightly smaller on tablets */
+  }
+
+  .about-text {
+      font-size: 1.1rem; /* Adjust text size */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-title {
+      font-size: 1.5rem; /* Smaller for mobile */
+  }
+
+  .about-text {
+      font-size: 0.9rem; /* Smaller text */
+  }
+}

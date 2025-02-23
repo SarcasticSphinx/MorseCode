@@ -1,183 +1,283 @@
-/* General Container */
+/* General Container with gradient */
 .exam-container {
   text-align: center;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   max-width: 600px;
-  margin: auto;
-  padding: 20px;
-  background: #f4f4f4;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 90px auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 20px;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.1),
+    0 1px 8px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Title */
+.exam-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4CAF50, #008CBA);
+  border-radius: 20px 20px 0 0;
+}
+
+/* Title with gradient */
 .exam-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(45deg, #2c3e50, #3498db);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
 }
 
-/* Instructions */
+/* Instructions with enhanced readability */
 .instruction {
   font-size: 16px;
-  margin-bottom: 5px;
+  line-height: 1.6;
+  color: #495057;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  transition: transform 0.2s ease;
 }
 
-/* Question Count */
+.instruction:hover {
+  transform: translateY(-2px);
+}
+
+/* Question Count with pill design */
 .question-count {
   font-size: 14px;
-  color: #555;
-  margin-bottom: 15px;
+  color: #6c757d;
+  margin: 10px 0;
+  padding: 8px 16px;
+  background: rgba(108, 117, 125, 0.1);
+  border-radius: 20px;
+  display: inline-block;
 }
 
-/* Morse Code Blink Box */
+/* Morse Code Blink Box with modern animation */
 .morse-blink {
-  width: 50px;
-  height: 50px;
-  margin: 20px auto;
-  background-color: black;
+  width: 60px;
+  height: 60px;
+  margin: 30px auto;
+  background: linear-gradient(45deg, #2c3e50, #3498db);
   opacity: 0;
-  transition: opacity 0.2s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 50%;
+  box-shadow: 0 0 20px rgba(52, 152, 219, 0);
 }
 
 .blink {
   opacity: 1;
+  box-shadow: 0 0 30px rgba(52, 152, 219, 0.5);
+  transform: scale(1.05);
 }
 
-/* Input Field */
+/* Input Field with floating label effect */
 .guess-input {
-  padding: 10px;
+  padding: 15px;
   font-size: 18px;
   width: 80%;
-  max-width: 250px;
-  border: 2px solid #333;
-  border-radius: 5px;
+  max-width: 300px;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-/* Buttons */
+.guess-input:focus {
+  border-color: #4CAF50;
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.05),
+    0 0 0 3px rgba(76, 175, 80, 0.1);
+  transform: scale(1.02);
+  outline: none;
+}
+
+/* Button Styles with hover effects */
 .submit-button,
 .again-button,
 .back-button,
 .start-button {
-  margin: 10px 5px;
-  padding: 10px 15px;
+  margin: 15px 8px;
+  padding: 12px 24px;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 600;
   border: none;
-  border-radius: 5px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background 0.3s ease-in-out;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
 }
 
-.back-button {
-  background: #008CBA;
+.submit-button, .start-button {
+  background: linear-gradient(45deg, #4CAF50, #45a049);
   color: white;
 }
 
-.start-button {
-  background: #4CAF50;
+.back-button, .again-button {
+  background: linear-gradient(45deg, #008CBA, #0077a8);
   color: white;
 }
 
-.submit-button {
-  background: #4CAF50;
-  color: white;
+.submit-button:hover,
+.again-button:hover,
+.back-button:hover,
+.start-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.submit-button:hover {
-  background: #45a049;
+.submit-button:active,
+.again-button:active,
+.back-button:active,
+.start-button:active {
+  transform: translateY(1px);
 }
 
-.again-button {
-  background: #008CBA;
-  color: white;
-}
-
-.again-button:hover {
-  background: #0077a8;
-}
-
-/* Feedback Text */
+/* Feedback Text with animation */
 .feedback {
   font-size: 18px;
-  font-weight: bold;
-  margin-top: 10px;
-  color: #333;
-}
-
-/* Results Section */
-.result-container {
+  font-weight: 600;
   margin-top: 20px;
   padding: 15px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Results Section with card design */
+.result-container {
+  margin-top: 30px;
+  padding: 25px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .result-title {
-  font-size: 22px;
-  margin-bottom: 10px;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #2c3e50;
 }
 
-/* Results Table */
+/* Modern Table Design */
 .result-table {
   width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 20px;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .result-table th,
 .result-table td {
-  border: 1px solid #ddd;
-  padding: 10px;
+  padding: 15px;
   text-align: center;
+  transition: background-color 0.3s ease;
 }
 
 .result-table th {
-  background: #333;
+  background: linear-gradient(45deg, #2c3e50, #3498db);
   color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
 }
 
 .result-table td {
-  background: #f9f9f9;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.result-table tr:hover td {
+  background: #f1f3f5;
 }
 
 .result-table td:last-child {
-  font-weight: bold;
+  font-weight: 600;
+  color: #2c3e50;
 }
 
 .result-table td:nth-child(4) {
+  font-weight: 600;
+}
+
+.result-table td[data-correct="true"] {
   color: #4CAF50;
 }
 
-.result-table td:nth-child(4):contains("❌") {
-  color: #d9534f;
+.result-table td[data-correct="false"] {
+  color: #dc3545;
 }
 
-/* Responsive Design */
+/* Responsive Design with smooth transitions */
 @media (max-width: 600px) {
+  .mode-title{
+    margin-top: 50px;
+  }
   .exam-container {
-    padding: 10px;
+    margin: 90px 20px;
+    padding: 20px;
   }
 
   .exam-title {
-    font-size: 20px;
+    font-size: 24px;
   }
 
   .instruction {
     font-size: 14px;
+    padding: 8px;
   }
 
   .question-count {
     font-size: 12px;
+    padding: 6px 12px;
   }
 
   .guess-input {
     font-size: 16px;
-    width: 100%;
+    padding: 12px;
   }
 
   .submit-button,
@@ -185,20 +285,36 @@
   .back-button,
   .start-button {
     font-size: 14px;
-    padding: 8px 10px;
+    padding: 10px 20px;
+    width: 100%;
+    margin: 8px 0;
   }
 
-  .feedback {
-    font-size: 16px;
-  }
-
-  .result-title {
-    font-size: 20px;
+  .result-table {
+    font-size: 14px;
   }
 
   .result-table th,
   .result-table td {
-    padding: 8px;
+    padding: 10px;
   }
 }
 
+/* Custom Scrollbar */
+.exam-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.exam-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.exam-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.exam-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

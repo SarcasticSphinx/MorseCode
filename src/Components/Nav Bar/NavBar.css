@@ -1,0 +1,119 @@
+.navbar {
+    background-color: #2c3e50;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    
+  }
+  
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    height:   50px;
+  }
+  
+  .logo:hover {
+    transform: scale(1.05);
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #3498db;
+  }
+  
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #3498db;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+  
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .menu-toggle:hover {
+    transform: scale(1.1);
+  }
+  
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .nav-links {
+      position: absolute;
+      flex-direction: column;
+      background-color: #2c3e50;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      gap: 0;
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  
+    .nav-links.open {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    .nav-links a {
+      padding: 1rem;
+      width: 100%;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      transform: translateX(-20px);
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+  
+    .nav-links.open a {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  
+    .nav-links.open a:nth-child(1) { transition-delay: 0.1s; }
+    .nav-links.open a:nth-child(2) { transition-delay: 0.2s; }
+    .nav-links.open a:nth-child(3) { transition-delay: 0.3s; }
+  }
