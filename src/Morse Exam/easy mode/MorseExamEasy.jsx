@@ -1,5 +1,5 @@
 import { MORSE_CODE_DICT } from "../../../data/morseCode";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "./MorseExam.css";
 
 const MorseExam = () => {
@@ -11,6 +11,7 @@ const MorseExam = () => {
   const [results, setResults] = useState([]);
   const [examFinished, setExamFinished] = useState(false);
   const [examStarted, setExamStarted] = useState(false); // New state for exam start
+  const inputRef = useRef(null);
 
   useEffect(() => {
     if (examStarted) {
@@ -51,6 +52,10 @@ const MorseExam = () => {
     }, 1000);
   };
 
+  const handleInputChange = (e) => {
+    setUserGuess(e.target.value);
+  };
+
   const handleGuess = () => {
     const currentLetter = questions[currentIndex];
     const isCorrect = userGuess.toUpperCase() === currentLetter;
@@ -73,6 +78,12 @@ const MorseExam = () => {
       setTimeout(() => {
         setCurrentIndex(currentIndex + 1);
         startBlinking(questions[currentIndex + 1]);
+        // Focus on the input field after a short delay to ensure it's visible
+        setTimeout(() => {
+          if (inputRef.current) {
+              inputRef.current.focus();
+          }
+      }, 100);
         setFeedback("");
       }, 1000);
     } else {
@@ -93,7 +104,9 @@ const MorseExam = () => {
   return (
     <div className="exam-container">
       <h1 className="exam-title">Morse Code Exam [Easy Mode]</h1>
-      <a href="/MorseCode/#/exam"><button className="back-button">Back</button></a>
+      <a href="/MorseCode/#/exam">
+        <button className="back-button">Back</button>
+      </a>
       {!examStarted ? (
         <button className="start-button" onClick={handleStartExam}>
           Start Exam
@@ -109,8 +122,11 @@ const MorseExam = () => {
             type="text"
             className="guess-input"
             value={userGuess}
-            onChange={(e) => setUserGuess(e.target.value)}
-            placeholder="Enter your guess"
+            onChange={handleInputChange}
+            placeholder="Type your answer"
+            maxLength={5}
+            ref={inputRef}
+            autoFocus
           />
           <button className="submit-button" onClick={handleGuess}>
             Submit Guess

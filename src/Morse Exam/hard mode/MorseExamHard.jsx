@@ -1,5 +1,5 @@
 import { MORSE_CODE_DICT } from "../../../data/morseCode";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "../easy mode/MorseExamEasy";
 
 const MorseExam = () => {
@@ -12,6 +12,9 @@ const MorseExam = () => {
     const [examFinished, setExamFinished] = useState(false);
     const [examStarted, setExamStarted] = useState(false);
     const [countdown, setCountdown] = useState(null);
+    
+    // Create a ref for the input element
+    const inputRef = useRef(null);
 
     const generateQuestions = () => {
         const letters = Object.keys(MORSE_CODE_DICT);
@@ -42,6 +45,13 @@ const MorseExam = () => {
             timer = setTimeout(() => {
                 setCountdown(null);
                 startBlinking(questions[currentIndex]);
+                
+                // Focus on the input field after a short delay to ensure it's visible
+                setTimeout(() => {
+                    if (inputRef.current) {
+                        inputRef.current.focus();
+                    }
+                }, 100);
             }, 1000);
         }
         return () => clearTimeout(timer);
@@ -172,6 +182,8 @@ const MorseExam = () => {
                                 onChange={handleInputChange}
                                 placeholder="Type your answer"
                                 maxLength={5}
+                                ref={inputRef}
+                                autoFocus
                             />
                         </>
                     )}
