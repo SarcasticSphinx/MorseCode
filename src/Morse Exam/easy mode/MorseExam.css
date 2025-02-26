@@ -1,442 +1,468 @@
-/* General Container with gradient */
-.exam-container {
-  text-align: center;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  max-width: 600px;
-  margin: 90px auto;
-  padding: 30px;
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-  border-radius: 20px;
-  box-shadow: 
-    0 10px 30px rgba(0, 0, 0, 0.1),
-    0 1px 8px rgba(0, 0, 0, 0.07);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.exam-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #4CAF50, #008CBA);
-  border-radius: 20px 20px 0 0;
-}
-
-/* Title with gradient */
-.exam-title {
-  font-size: 28px;
-  font-weight: 700;
-  background: linear-gradient(45deg, #2c3e50, #3498db);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  position: relative;
-}
-
-/* Instructions with enhanced readability */
-.instruction {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #495057;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 8px;
-  transition: transform 0.2s ease;
-}
-
-.instruction:hover {
-  transform: translateY(-2px);
-}
-
-/* Question Count with pill design */
-.question-count {
-  font-size: 14px;
-  color: #6c757d;
-  margin: 10px 0;
-  padding: 8px 16px;
-  background: rgba(108, 117, 125, 0.1);
-  border-radius: 20px;
-  display: inline-block;
-}
-
-/* Morse Code Blink Box with modern animation */
-.morse-blink {
-  width: 60px;
-  height: 60px;
-  margin: 30px auto;
-  background: linear-gradient(45deg, #e80b0b, #e89388);
-  opacity: 0;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: 50%;
-  box-shadow: 0 0 20px rgba(197, 46, 46, 0);
-}
-
-.blink {
-  opacity: 1;
-  box-shadow: 0 0 30px rgba(219, 52, 52, 0.5);
-  transform: scale(1.05);
-}
-
-/* Input Field with floating label effect */
-.guess-input {
-  padding: 15px;
-  font-size: 18px;
-  width: 80%;
-  max-width: 300px;
-  border: 2px solid #e9ecef;
-  border-radius: 12px;
-  text-align: center;
-  margin-top: 20px;
-  transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-.guess-input:focus {
-  border-color: #4CAF50;
-  box-shadow: 
-    inset 0 2px 4px rgba(0, 0, 0, 0.05),
-    0 0 0 3px rgba(76, 175, 80, 0.1);
-  transform: scale(1.02);
-  outline: none;
-}
-
-/* Button Styles with hover effects */
-.submit-button,
-.again-button,
-.back-button,
-.start-button {
-  margin: 15px 8px;
-  padding: 12px 24px;
-  font-size: 16px;
-  font-weight: 600;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  position: relative;
-  overflow: hidden;
-}
-
-.submit-button, .start-button {
-  background: linear-gradient(45deg, #4CAF50, #45a049);
-  color: white;
-}
-
-.back-button, .again-button {
-  background: linear-gradient(45deg, #008CBA, #0077a8);
-  color: white;
-}
-
-.submit-button:hover,
-.again-button:hover,
-.back-button:hover,
-.start-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.submit-button:active,
-.again-button:active,
-.back-button:active,
-.start-button:active {
-  transform: translateY(1px);
-}
-
-/* Feedback Text with animation */
-.feedback {
-  font-size: 18px;
-  font-weight: 600;
-  margin-top: 20px;
-  padding: 15px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.9);
-  animation: fadeInUp 0.5s ease forwards;
-  opacity: 0;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Results Section with card design */
-.result-container {
-  margin-top: 30px;
-  padding: 25px;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  animation: slideIn 0.5s ease forwards;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.result-title {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #2c3e50;
-}
-
-/* Modern Table Design */
-.result-table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  margin-top: 20px;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.result-table th,
-.result-table td {
-  padding: 15px;
-  text-align: center;
-  transition: background-color 0.3s ease;
-}
-
-.result-table th {
-  background: linear-gradient(45deg, #2c3e50, #3498db);
-  color: white;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 14px;
-  letter-spacing: 1px;
-}
-
-.result-table td {
-  background: #f8f9fa;
-  border-bottom: 1px solid #e9ecef;
-}
-
-.result-table tr:hover td {
-  background: #f1f3f5;
-}
-
-.result-table td:last-child {
-  font-weight: 600;
-  color: #2c3e50;
-}
-
-.result-table td:nth-child(4) {
-  font-weight: 600;
-}
-
-.result-table td[data-correct="true"] {
-  color: #4CAF50;
-}
-
-.result-table td[data-correct="false"] {
-  color: #dc3545;
-}
-
-/* Responsive Design with smooth transitions */
-@media (max-width: 600px) {
-  .mode-title{
-    margin-top: 90px;
-  }
+  /* General Container with gradient */
   .exam-container {
-    margin: 90px 20px;
-    padding: 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    max-width: 600px;
+    margin: 90px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 20px;
+    box-shadow: 
+      0 10px 30px rgba(0, 0, 0, 0.1),
+      0 1px 8px rgba(0, 0, 0, 0.07);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
   }
 
-  .exam-title {
-    font-size: 24px;
-  }
-
-  .instruction {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-  .question-count {
-    font-size: 12px;
-    padding: 6px 12px;
-  }
-
-  .guess-input {
-    font-size: 16px;
-    padding: 12px;
-  }
-
-  .submit-button,
-  .again-button,
-  .back-button,
-  .start-button {
-    font-size: 14px;
-    padding: 10px 20px;
+  /* This is the key change: Create a pseudo-element for the flash effect */
+  .exam-container.flash-correct::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    margin: 8px 0;
+    height: 100%;
+    background-color: rgba(144, 238, 144, 0.7); /* lightgreen with opacity */
+    z-index: -1;
+    animation: flashAnimation 1s ease;
   }
 
-  .result-table {
-    font-size: 14px;
+  .exam-container.flash-incorrect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(240, 128, 128, 0.7); /* lightcoral with opacity */
+    z-index: -1;
+    animation: flashAnimation 1s ease;
   }
 
-  .result-table th,
-  .result-table td {
+  @keyframes flashAnimation {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  .exam-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4CAF50, #008CBA);
+    border-radius: 20px 20px 0 0;
+    z-index: 1;
+  }
+
+  /* Title with gradient */
+  .exam-title {
+    font-size: 28px;
+    font-weight: 700;
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+  }
+
+  /* Instructions with enhanced readability */
+  .instruction {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #495057;
     padding: 10px;
-  }
-}
-
-/* Custom Scrollbar */
-.exam-container::-webkit-scrollbar {
-  width: 8px;
-}
-
-.exam-container::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 4px;
-}
-
-.exam-container::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 4px;
-}
-
-.exam-container::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-
-
-
-
-/* Responsive Design with smooth transitions */
-@media (max-width: 600px) {
-  .mode-title{
-    margin-top: 90px;
-  }
-  .exam-container {
-    margin: 90px 15px;
-    padding: 15px 10px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    transition: transform 0.2s ease;
   }
 
-  .exam-title {
-    font-size: 22px;
+  .instruction:hover {
+    transform: translateY(-2px);
   }
 
-  .instruction {
-    font-size: 14px;
-    padding: 8px;
-  }
-
+  /* Question Count with pill design */
   .question-count {
-    font-size: 12px;
-    padding: 6px 12px;
+    font-size: 14px;
+    color: #6c757d;
+    margin: 10px 0;
+    padding: 8px 16px;
+    background: rgba(108, 117, 125, 0.1);
+    border-radius: 20px;
+    display: inline-block;
   }
 
+  /* Morse Code Blink Box with modern animation */
+  .morse-blink {
+    width: 60px;
+    height: 60px;
+    margin: 30px auto;
+    background: linear-gradient(45deg, #e80b0b, #e89388);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(197, 46, 46, 0);
+  }
+
+  .blink {
+    opacity: 1;
+    box-shadow: 0 0 30px rgba(219, 52, 52, 0.5);
+    transform: scale(1.05);
+  }
+
+  /* Input Field with floating label effect */
   .guess-input {
-    font-size: 16px;
-    padding: 12px;
-    width: 90%;
+    padding: 15px;
+    font-size: 18px;
+    width: 80%;
+    max-width: 300px;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  .guess-input:focus {
+    border-color: #4CAF50;
+    box-shadow: 
+      inset 0 2px 4px rgba(0, 0, 0, 0.05),
+      0 0 0 3px rgba(76, 175, 80, 0.1);
+    transform: scale(1.02);
+    outline: none;
   }
 
+  /* Button Styles with hover effects */
   .submit-button,
   .again-button,
   .back-button,
   .start-button {
-    font-size: 14px;
-    padding: 10px 20px;
-    width: 100%;
-    margin: 8px 0;
+    margin: 15px 8px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
   }
-  
-  /* Mobile-specific table styles */
+
+  .submit-button, .start-button {
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    color: white;
+  }
+
+  .back-button, .again-button {
+    background: linear-gradient(45deg, #008CBA, #0077a8);
+    color: white;
+  }
+
+  .submit-button:hover,
+  .again-button:hover,
+  .back-button:hover,
+  .start-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .submit-button:active,
+  .again-button:active,
+  .back-button:active,
+  .start-button:active {
+    transform: translateY(1px);
+  }
+
+  /* Feedback Text with animation */
+  .feedback {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.9);
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Results Section with card design */
   .result-container {
-    padding: 15px 10px;
-    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    margin-top: 30px;
+    padding: 25px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease forwards;
   }
-  
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .result-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+  }
+
+  /* Modern Table Design */
   .result-table {
-    font-size: 12px;
-    min-width: 100%;
-    display: block;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 20px;
+    border-radius: 12px;
+    overflow: hidden;
   }
 
   .result-table th,
   .result-table td {
-    padding: 8px 5px;
-    word-break: break-word;
+    padding: 15px;
+    text-align: center;
+    transition: background-color 0.3s ease;
   }
-  
-  /* Adjust column widths for mobile */
-  .result-table th:nth-child(1),
-  .result-table td:nth-child(1) {
-    max-width: 30%;
+
+  .result-table th {
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
   }
-  
-  .result-table th:nth-child(2),
-  .result-table td:nth-child(2) {
-    max-width: 20%;
+
+  .result-table td {
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
   }
-  
-  .result-table th:nth-child(3),
-  .result-table td:nth-child(3) {
-    max-width: 20%;
+
+  .result-table tr:hover td {
+    background: #f1f3f5;
   }
-  
-  .result-table th:nth-child(4),
+
+  .result-table td:last-child {
+    font-weight: 600;
+    color: #2c3e50;
+  }
+
   .result-table td:nth-child(4) {
-    max-width: 30%;
+    font-weight: 600;
   }
-  
-  /* For very small screens, transform table to vertical layout */
-  @media (max-width: 400px) {
+
+  .result-table td[data-correct="true"] {
+    color: #4CAF50;
+  }
+
+  .result-table td[data-correct="false"] {
+    color: #dc3545;
+  }
+
+  /* Responsive Design with smooth transitions */
+  @media (max-width: 600px) {
+    .mode-title{
+      margin-top: 90px;
+    }
+    .exam-container {
+      margin: 90px 20px;
+      padding: 20px;
+    }
+
+    .exam-title {
+      font-size: 24px;
+    }
+
+    .instruction {
+      font-size: 14px;
+      padding: 8px;
+    }
+
+    .question-count {
+      font-size: 12px;
+      padding: 6px 12px;
+    }
+
+    .guess-input {
+      font-size: 16px;
+      padding: 12px;
+    }
+
+    .submit-button,
+    .again-button,
+    .back-button,
+    .start-button {
+      font-size: 14px;
+      padding: 10px 20px;
+      width: 100%;
+      margin: 8px 0;
+    }
+
     .result-table {
-      border-radius: 8px;
+      font-size: 14px;
     }
-    
-    .result-table thead {
-      display: none; /* Hide headers on very small screens */
-    }
-    
-    .result-table tbody tr {
-      display: block;
-      margin-bottom: 15px;
-      border: 1px solid #e9ecef;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    
-    .result-table tbody td {
-      display: flex;
-      justify-content: space-between;
-      text-align: right;
-      padding: 10px 8px;
-      position: relative;
-      border-bottom: 1px solid #e9ecef;
-    }
-    
-    .result-table tbody td:last-child {
-      border-bottom: none;
-    }
-    
-    .result-table tbody td::before {
-      content: attr(data-label);
-      font-weight: 600;
-      text-align: left;
-      color: #2c3e50;
+
+    .result-table th,
+    .result-table td {
+      padding: 10px;
     }
   }
-}
+
+  /* Custom Scrollbar */
+  .exam-container::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .exam-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+
+  .exam-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+
+  .exam-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  /* Responsive Design with smooth transitions */
+  @media (max-width: 600px) {
+    .mode-title{
+      margin-top: 90px;
+    }
+    .exam-container {
+      margin: 90px 15px;
+      padding: 15px 10px;
+    }
+
+    .exam-title {
+      font-size: 22px;
+    }
+
+    .instruction {
+      font-size: 14px;
+      padding: 8px;
+    }
+
+    .question-count {
+      font-size: 12px;
+      padding: 6px 12px;
+    }
+
+    .guess-input {
+      font-size: 16px;
+      padding: 12px;
+      width: 90%;
+    }
+
+    .submit-button,
+    .again-button,
+    .back-button,
+    .start-button {
+      font-size: 14px;
+      padding: 10px 20px;
+      width: 100%;
+      margin: 8px 0;
+    }
+    
+    /* Mobile-specific table styles */
+    .result-container {
+      padding: 15px 10px;
+      overflow-x: auto; /* Allow horizontal scrolling if needed */
+    }
+    
+    .result-table {
+      font-size: 12px;
+      min-width: 100%;
+      display: block;
+    }
+    .result-table th{
+      font-size: .75rem;
+    }
+
+    .result-table th,
+    .result-table td {
+      padding: 8px 5px;
+
+    }
+    
+    /* Adjust column widths for mobile */
+    .result-table th:nth-child(1),
+    .result-table td:nth-child(1) {
+      max-width: 30%;
+    }
+    
+    .result-table th:nth-child(2),
+    .result-table td:nth-child(2) {
+      max-width: 20%;
+    }
+    
+    .result-table th:nth-child(3),
+    .result-table td:nth-child(3) {
+      max-width: 20%;
+    }
+    
+    .result-table th:nth-child(4),
+    .result-table td:nth-child(4) {
+      max-width: 30%;
+    }
+    
+    /* For very small screens, transform table to vertical layout */
+    @media (max-width: 400px) {
+      .result-table {
+        border-radius: 8px;
+      }
+      
+      .result-table tbody tr {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      
+      .result-table tbody td {
+        display: flex;
+        justify-content: space-between;
+        text-align: right;
+        padding: 10px 8px;
+        position: relative;
+        border-bottom: 1px solid #e9ecef;
+      }
+      
+      .result-table tbody td:last-child {
+        border-bottom: none;
+      }
+      
+      .result-table tbody td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        text-align: left;
+        color: #2c3e50;
+      }
+    }
+  }

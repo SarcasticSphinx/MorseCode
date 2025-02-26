@@ -175,6 +175,7 @@ const MorseExam = () => {
                     ) : (
                         <>
                             <div className={`morse-blink ${isBlinking ? "blink" : ""}`}></div>
+                            <p className="feedback">{feedback}</p>
                             <input
                                 type="text"
                                 className="guess-input"
@@ -187,7 +188,7 @@ const MorseExam = () => {
                             />
                         </>
                     )}
-                    <p className="feedback">{feedback}</p>
+                    
                 </>
             ) : (
                 <div className="result-container">

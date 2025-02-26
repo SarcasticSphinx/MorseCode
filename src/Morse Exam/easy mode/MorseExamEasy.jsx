@@ -67,6 +67,7 @@ const MorseExam = () => {
         correct: isCorrect,
       },
     ]);
+    
     setFeedback(
       isCorrect
         ? "Correct!"
@@ -128,13 +129,13 @@ const MorseExam = () => {
             ref={inputRef}
             autoFocus
           />
+          <p className="feedback">{feedback}</p>
           <button className="submit-button" onClick={handleGuess}>
             Submit Guess
           </button>
           <button className="again-button disabled" onClick={handleBlinkAgain}>
             Again
           </button>
-          <p className="feedback">{feedback}</p>
         </>
       ) : (
         <div className="result-container">
