@@ -79,7 +79,7 @@ const MorseExam = () => {
                         () => {
                             setIsBlinking(false);
                         },
-                        morse[morseIndex] === "▪" ? 200 : 600
+                        morse[morseIndex] === "▪" ? 100 : 500
                     );
                     morseIndex++;
                 }
