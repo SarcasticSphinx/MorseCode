@@ -21,10 +21,6 @@
     height:   50px;
   }
   
-  .logo:hover {
-    transform: scale(1.05);
-  }
-  
   .nav-links {
     display: flex;
     gap: 2rem;
@@ -72,6 +68,9 @@
   }
   
   @media (max-width: 768px) {
+    .logo{
+      height: 40px;
+    }
     .menu-toggle {
       display: block;
     }

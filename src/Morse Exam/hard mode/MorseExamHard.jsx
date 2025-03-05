@@ -17,9 +17,10 @@ const MorseExam = () => {
     const inputRef = useRef(null);
 
     const generateQuestions = () => {
+        document.querySelector(".exam-rules").style.display = "none";
         const letters = Object.keys(MORSE_CODE_DICT);
         let randomWords = [];
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 12; i++) {
             let word = "";
             while (word.length < 5) {
                 const letter = letters[Math.floor(Math.random() * letters.length)];
@@ -143,13 +144,15 @@ const MorseExam = () => {
 
     const moveToNextQuestion = () => {
         setUserGuess("");
-        if (currentIndex < 4) {
+        // Change the condition to check if we've reached the last question
+        if (currentIndex < questions.length - 1) {
             setTimeout(() => {
                 setCurrentIndex(currentIndex + 1);
                 setCountdown(3);
                 setFeedback("");
             }, 3000);
         } else {
+            // When we've reached the last question, set exam to finished
             setTimeout(() => {
                 setExamFinished(true);
             }, 3000);
@@ -159,6 +162,7 @@ const MorseExam = () => {
     return (
         <div className="exam-container">
             <h1 className="exam-title">Morse Code Exam [Hard Mode]</h1>
+            <p className="exam-rules">In this segment, you'll be given 5 word questions, each word containing 5 random letters. <strong>This exam will be a live exam.</strong>  Each question will start after a 3-second countdown, and you will have to answer in real time. If you mistake any letter, the whole answer will be incorrect, and you'll be shifted to the next question. Each letter will be represented by a blinking Morse code sequence. Your task is to guess the letter based on the blinking pattern. <strong>There will be no retry button.</strong></p>
             <a href="/MorseCode/#/exam"><button className="back-button">Back</button></a>
             {!examStarted ? (
                 <button className="start-button" onClick={generateQuestions}>
@@ -169,7 +173,7 @@ const MorseExam = () => {
                     <p className="instruction">
                         Guess the word based on the blinking Morse code!
                     </p>
-                    <p className="question-count">Question {currentIndex + 1} of 5</p>
+                    <p className="question-count">Question {currentIndex + 1} of 12</p>
                     {countdown !== null ? (
                         <div className="countdown">Starting in {countdown}...</div>
                     ) : (
@@ -196,8 +200,8 @@ const MorseExam = () => {
                     <table className="result-table">
                         <thead>
                             <tr>
-                                <th>Question</th>
-                                <th>Answer</th>
+                                <th>Morse Code</th>
+                                <th>Correct Answer</th>
                                 <th>Your Answer</th>
                                 <th>Result</th>
                             </tr>

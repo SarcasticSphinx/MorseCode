@@ -14,6 +14,7 @@ const MorseExam = () => {
   const inputRef = useRef(null);
 
   const generateQuestions = () => {
+    document.querySelector(".exam-rules").style.display = "none";
     const letters = Object.keys(MORSE_CODE_DICT);
     let randomWords = [];
     for (let i = 0; i < 5; i++) {
@@ -106,6 +107,7 @@ const MorseExam = () => {
   return (
     <div className="exam-container">
       <h1 className="exam-title">Morse Code Exam [Medium Mode]</h1>
+      <p className="exam-rules">In this segment, you'll be given 5 word questions each word containing 5 random letters either number or letter. Each letter will be represented by a blinking Morse code sequence. Your task is to guess the letter based on the blinking pattern. If needed, you can replay the blinking sequence before submitting your answer.</p>
       <a href="/MorseCode/#/exam">
         <button className="back-button">Back</button>
       </a>

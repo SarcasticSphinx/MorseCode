@@ -83,6 +83,21 @@
     transform: translateY(-2px);
   }
 
+  .exam-rules {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #495057;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease;
+  }
+
+  .exam-rules:hover {
+    transform: translateY(-2px);
+  }
+
   /* Question Count with pill design */
   .question-count {
     font-size: 14px;

@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="nav-container">
-        <img src={logo} alt="Morse Code App" className="logo" />
+        <Link to="/" onClick={closeMenu}><img src={logo} alt="Morse Code App" className="logo" /></Link>
         <button 
           className="menu-toggle" 
           onClick={() => setMenuOpen(!menuOpen)}

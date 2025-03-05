@@ -99,12 +99,14 @@ const MorseExam = () => {
   };
 
   const handleStartExam = () => {
+    document.querySelector(".exam-rules").style.display = "none";
     setExamStarted(true);
   };
 
   return (
     <div className="exam-container">
       <h1 className="exam-title">Morse Code Exam [Easy Mode]</h1>
+      <p className="exam-rules">In this segment, you'll be given 5 letter questions. Each letter will be represented by a blinking Morse code sequence. Your task is to guess the letter based on the blinking pattern. If needed, you can replay the blinking sequence before submitting your answer.</p>
       <a href="/MorseCode/#/exam">
         <button className="back-button">Back</button>
       </a>
